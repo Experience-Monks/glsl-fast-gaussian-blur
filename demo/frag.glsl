@@ -9,8 +9,9 @@ uniform vec2 direction;
 
 void main() {
   vec2 uv = vec2(gl_FragCoord.xy / iResolution.xy);
-  if (flip)
+  if (flip) {
     uv.y = 1.0 - uv.y;
+  }
 
   vec4 blurred = blur(iChannel0, uv, iResolution.xy, direction);
   gl_FragColor = blurred;
