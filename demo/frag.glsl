@@ -13,6 +13,5 @@ void main() {
     uv.y = 1.0 - uv.y;
   }
 
-  vec4 blurred = blur(iChannel0, uv, iResolution.xy, direction);
-  gl_FragColor = blurred;
+  gl_FragColor = blur(iChannel0, uv, iResolution.xy, direction);
 }

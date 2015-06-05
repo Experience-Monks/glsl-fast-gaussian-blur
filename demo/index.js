@@ -32,6 +32,7 @@ function start(err, image) {
   var fboA = createFBO(gl, [width, height])
   var fboB = createFBO(gl, [width, height])
 
+  // apply linear filtering to get a smooth interpolation
   var textures = [ texture, fboA.color[0], fboB.color[0] ]
   textures.forEach(setParameters)
 
@@ -44,7 +45,7 @@ function start(err, image) {
     gl.viewport(0, 0, width, height)
 
     var anim = (Math.sin(time) * 0.5 + 0.5)
-    var iterations = 9
+    var iterations = 8
     var writeBuffer = fboA
     var readBuffer = fboB
 

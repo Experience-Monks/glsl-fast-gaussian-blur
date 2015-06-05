@@ -39,9 +39,10 @@ function coefficients(weights) {
   console.log('weights', linearWeights)
 }
 
-
-// var weights = '66    220    495    792    924    792    495    220    66'
-var weights = '120    560    1820    4368    8008    11440    12870    11440    8008    4368    1820    560    120'
+var weights = '28    56    70    56    28' // 5 taps
+// var weights = '45    120   210   252   210   120   45' // 7 taps
+// var weights = '66    220    495    792    924    792    495    220    66' // 9 taps
+// var weights = '120    560    1820    4368    8008    11440    12870    11440    8008    4368    1820    560    120'
   .split(/\s+/)
   .map(function(a) {
     return parseInt(a, 10)

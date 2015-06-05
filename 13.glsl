@@ -1,4 +1,4 @@
-vec4 blur(sampler2D image, vec2 uv, vec2 resolution, vec2 direction) {
+vec4 blur13(sampler2D image, vec2 uv, vec2 resolution, vec2 direction) {
   vec4 color = vec4(0.0);
   vec2 off1 = vec2(1.411764705882353) * direction;
   vec2 off2 = vec2(3.2941176470588234) * direction;
@@ -13,4 +13,4 @@ vec4 blur(sampler2D image, vec2 uv, vec2 resolution, vec2 direction) {
   return color;
 }
 
-#pragma glslify: export(blur)
+#pragma glslify: export(blur13)
