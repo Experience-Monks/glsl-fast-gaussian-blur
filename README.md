@@ -2,6 +2,10 @@
 
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
+[![demo](http://i.imgur.com/o1W0Aq4.png)](http://jam3.github.io/glsl-fast-gaussian-blur/)
+
+[demo](http://jam3.github.io/glsl-fast-gaussian-blur/) - [source](./demo/index.js)
+
 Optimized separable gaussian blurs for GLSL. This is adapted from [Efficient Gaussian Blur with Linear Sampling](http://rastergrid.com/blog/2010/09/efficient-gaussian-blur-with-linear-sampling/).
 
 ## Example
