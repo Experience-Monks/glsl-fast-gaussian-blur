@@ -2,21 +2,19 @@
   "name": "glsl-fast-gaussian-blur",
   "version": "1.0.0",
   "description": "optimized 9-tap gaussian blur for GLSL",
-  "main": "9.js",
+  "main": "./9.glsl",
   "license": "MIT",
   "author": {
     "name": "Matt DesLauriers",
     "email": "dave.des@gmail.com",
     "url": "https://github.com/mattdesl"
   },
-  "private": true,
   "dependencies": {
-    "gl-fbo": "^2.0.3"
   },
   "devDependencies": {
+    "gl-fbo": "^2.0.3",
     "a-big-triangle": "^1.0.0",
     "array-range": "^1.0.1",
-    "baboon-image": "^1.0.0",
     "baboon-image-uri": "^1.0.1",
     "budo": "^4.0.0",
     "canvas-loop": "^1.0.4",
@@ -26,7 +24,6 @@
     "gl-texture2d": "^2.0.8",
     "glslify": "^2.1.2",
     "img": "^1.0.0",
-    "raf": "^2.0.4",
     "raf-loop": "^1.1.0",
     "webgl-context": "^2.1.2"
   },

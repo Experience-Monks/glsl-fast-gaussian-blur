@@ -50,6 +50,7 @@ function start(err, image) {
     var readBuffer = fboB
 
     for (var i=0; i<iterations; i++) {
+      // use a wide spread on first few passes
       var radius = (iterations - i - 1) * anim
 
       // draw blurred in one direction
