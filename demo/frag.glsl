@@ -5,7 +5,7 @@ uniform sampler2D iChannel0;
 uniform bool flip;
 uniform vec2 direction;
 
-#pragma glslify: blur = require('../9')
+#pragma glslify: blur = require('../')
 
 void main() {
   vec2 uv = vec2(gl_FragCoord.xy / iResolution.xy);
