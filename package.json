@@ -1,6 +1,6 @@
 {
   "name": "glsl-fast-gaussian-blur",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "optimized 9-tap gaussian blur for GLSL",
   "main": "./9.glsl",
   "license": "MIT",
