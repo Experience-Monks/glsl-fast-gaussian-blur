@@ -15,15 +15,14 @@ var uri = require('baboon-image-uri')
 var loadImage = require('img')
 loadImage(uri, start)
 
-function start(err, image) {
-  if (err)
-    throw err
-  
+function start (err, image) {
+  if (err) throw err
+
   var width = gl.drawingBufferWidth
   var height = gl.drawingBufferHeight
 
   var texture = require('gl-texture2d')(gl, image)
-  
+
   var shader = createShader(gl, glslify('./vert.glsl'), glslify('./frag.glsl'))
   shader.bind()
   shader.uniforms.iResolution = [width, height, 0]
@@ -40,7 +39,7 @@ function start(err, image) {
 
   loop(render).start()
 
-  function render(dt) {
+  function render (dt) {
     time += dt / 1000
     gl.viewport(0, 0, width, height)
 
@@ -49,16 +48,18 @@ function start(err, image) {
     var writeBuffer = fboA
     var readBuffer = fboB
 
-    for (var i=0; i<iterations; i++) {
-      // use a wide spread on first few passes
+    for (var i = 0; i < iterations; i++) {
+      // we will approximate a larger blur by using
+      // multiple iterations starting with a very wide radius
       var radius = (iterations - i - 1) * anim
 
       // draw blurred in one direction
       writeBuffer.bind()
-      if (i === 0)
+      if (i === 0) {
         texture.bind()
-      else
+      } else {
         readBuffer.color[0].bind()
+      }
       shader.bind()
       shader.uniforms.flip = true
       shader.uniforms.direction = i % 2 === 0 ? [radius, 0] : [0, radius]
@@ -71,16 +72,16 @@ function start(err, image) {
       writeBuffer = readBuffer
       readBuffer = t
     }
-    
+
     // draw last FBO to screen
     gl.bindFramebuffer(gl.FRAMEBUFFER, null)
     writeBuffer.color[0].bind()
     shader.uniforms.direction = [0, 0] // no blur
     shader.uniforms.flip = iterations % 2 !== 0
-    triangle(gl)  
+    triangle(gl)
   }
 
-  function setParameters(texture) {
+  function setParameters (texture) {
     texture.wrapS = texture.wrapT = gl.REPEAT
     texture.minFilter = gl.LINEAR
     texture.magFilter = gl.LINEAR

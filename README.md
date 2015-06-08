@@ -53,6 +53,10 @@ Blurs the `image` from the specified `uv` coordinate, using the given `resolutio
 
 Returns the blurred pixel color.
 
+## Further Optimizations
+
+This can be further optimized on some devices (notably PowerVR) by using non-dependent texture reads. This can be done by calculating the texture coordinates in the vertex shader, and passing them as varyings to the fragment shader. This is left as an exercise for the reader to keep this module simple. You can read more about it [here](http://xissburg.com/faster-gaussian-blur-in-glsl/).
+
 ## License
 
 MIT, see [LICENSE.md](http://github.com/Jam3/glsl-fast-gaussian-blur/blob/master/LICENSE.md) for details.
