@@ -9,7 +9,8 @@
     "email": "dave.des@gmail.com",
     "url": "https://github.com/mattdesl"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "a-big-triangle": "^1.0.0",
     "array-range": "^1.0.1",
@@ -23,7 +24,7 @@
     "gl-shader": "^4.0.1",
     "gl-texture2d": "^2.0.8",
     "glslify": "^2.1.2",
-    "img": "^1.0.0",
+    "load-img": "^1.0.0",
     "raf-loop": "^1.1.0",
     "uglify-js": "^2.4.23",
     "webgl-context": "^2.1.2"

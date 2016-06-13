@@ -12,7 +12,7 @@ var gl = require('webgl-context')({
 document.body.appendChild(gl.canvas)
 
 var uri = require('baboon-image-uri')
-var loadImage = require('img')
+var loadImage = require('load-img')
 loadImage(uri, start)
 
 function start (err, image) {
